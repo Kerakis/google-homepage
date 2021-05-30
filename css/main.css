@@ -1,7 +1,7 @@
 a {
   color: #000000;
   font-family: "Roboto", sans-serif;
-  font-size: 14px;
+  font-size: 13.5px;
   text-decoration: none;
 }
 
@@ -11,6 +11,21 @@ a:hover {
 
 body {
   background-color: #fff;
+}
+
+.avatar {
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.avatar-container {
+  display: inline-flex;
+  vertical-align: middle;
+}
+
+.avatar-container:hover {
+  background-color: #f2f2f2;
+  border-radius: 50%;
 }
 
 .button {
@@ -27,6 +42,10 @@ body {
   box-shadow: 0 1.5px 1.5px 1.5px #f0f2f5;
 }
 
+.button-container {
+  margin-top: 10px;
+}
+
 .content {
   align-items: center;
   display: flex;
@@ -36,14 +55,14 @@ body {
 }
 
 .dots {
+  fill: #656565;
+  transform: scale(0.6);
   vertical-align: middle;
-  width: 24px;
 }
 
 .dots-container {
-  display: inline-flex;
+  display: inline-block;
   height: 40px;
-  justify-content: center;
   width: 40px;
 }
 
@@ -53,7 +72,7 @@ body {
 }
 
 .footer {
-  background-color: #ececec;
+  background-color: #f2f2f2;
   bottom: 0;
   left: 0;
   position: fixed;
@@ -62,11 +81,11 @@ body {
 
 .footer-link {
   color: #70757a;
-  padding-right: 25px;
+  padding-right: 15px;
 }
 
 .footer-left-nav {
-  flex: 0 1 auto;
+  flex: 1 1 auto;
   order: 1;
 }
 
@@ -75,8 +94,8 @@ body {
   order: 3;
 }
 
-.footer-center {
-  flex: 0 2 auto;
+.footer-center-nav {
+  flex: 1.3 2 auto; /* Not really sure about using a decimal here but it seems to display correctly */
   order: 2;
 }
 
@@ -84,21 +103,25 @@ body {
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
-  margin: 20px;
+  margin: 15px;
 }
 
 .magnifyingGlass {
+  fill: #b4b4b4;
   vertical-align: middle;
   width: 24px;
 }
 
 .microphone {
   vertical-align: middle;
-  width: 28px;
+  width: 25px;
 }
 
 .nav-container {
-  margin: 20px;
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
 }
 
 .nav-link {
@@ -106,31 +129,27 @@ body {
 }
 
 .leaf {
+  margin: 0 1px 5px 0;
   vertical-align: middle;
-  width: 13px;
-}
-
-.left-nav-bar {
-  float: left;
+  width: 12.5px;
 }
 
 .logo {
-  margin-top: 250px;
-}
-
-.right-nav-bar {
-  float: right;
+  margin-top: 200px;
 }
 
 .search {
+  align-items: center;
   border: 1px solid;
   border-color: #dfe1e5;
   border-radius: 24px;
   display: flex;
   flex-direction: row;
-  margin: 25px;
+  justify-content: space-between;
+  margin: 1rem;
+  max-width: 90%;
   padding: 12px;
-  width: 582px;
+  width: 560px;
 }
 
 .searchBar {
@@ -140,7 +159,7 @@ body {
   border-right-color: inherit;
   border-right-style: solid;
   border-top-style: hidden;
-  height: 20px;
+  font-size: 16px;
   margin-left: 10px;
   margin-right: 15px;
   width: 100%;
@@ -157,8 +176,8 @@ body {
 /* Medium screens */
 @media all and (max-width: 1200px) {
   .footer-nav-container {
-    /* When on medium sized screens, we center it by evenly distributing empty space around items */
-    flex: 3 0;
+    /* When on medium sized screens, the center nav item moves to the top and the other two redistribute the remaining space on the bottom */
+    justify-content: space-evenly;
   }
   .footer-left-nav {
     order: 2;
@@ -168,9 +187,10 @@ body {
     order: 3;
   }
 
-  .footer-center {
+  .footer-center-nav {
     flex: 0 0 100%;
     order: 1;
+    padding-bottom: 20px;
     text-align: center;
   }
 }
@@ -178,22 +198,24 @@ body {
 /* Small screens */
 @media all and (max-width: 600px) {
   .footer-nav-container {
-    /* When on medium sized screens, we center it by evenly distributing empty space around items */
+    /* When on small sized screens, bottom nav becomes a column */
     align-content: space-evenly;
     flex-flow: column wrap;
   }
   .footer-left-nav {
     order: 2;
-    /* padding: 10px; */
+    padding: 10px;
+    text-align: center;
   }
 
   .footer-right-nav {
     order: 3;
-    /* padding: 10px; */
+    padding: 10px;
+    text-align: center;
   }
 
-  .footer-center {
+  .footer-center-nav {
     order: 1;
-    /* padding: 10px; */
+    padding: 10px;
   }
 }
