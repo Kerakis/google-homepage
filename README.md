@@ -1,2 +1,1 @@
-"# google-homepage" 
-Let's clone the Google homepage!
+This is an attempt to clone the Google homepage using the skills learned from The Odin Project.
